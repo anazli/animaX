@@ -33,3 +33,4 @@
 
 #qtcreator
 animation.*
+.qtc_clangd/
