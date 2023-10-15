@@ -3,8 +3,12 @@ project(animation VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(RUN_DIR ${PROJECT_SOURCE_DIR}/bin)
-set(EXE MainApp)
+set(EXE Animation)
 set(CMAKE_DEBUG_POSTFIX d)
+
+find_package(glad REQUIRED)
+find_package(OpenGL REQUIRED)
+find_package(GLFW3 REQUIRED)
 
 set(SOURCES src/main.cpp
             src/application.h)
@@ -16,3 +20,9 @@ set_target_properties(${EXE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${RUN_DIR}
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 target_compile_options(${EXE} PRIVATE "-g")
 endif()
+
+target_link_libraries(${EXE} PRIVATE
+                    OpenGL::OpenGL
+                    glad::glad
+                    glfw
+)

@@ -34,3 +34,9 @@
 #qtcreator
 animation.*
 .qtc_clangd/
+
+#build folder
+build
+
+#user defined Cmake presets
+CMakeUserPresets.json
