@@ -10,7 +10,7 @@ class Animation(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeDeps"
 
-    exports_sources = "CMakeLists.txt", "src/*"
+    exports_sources = "src/*"
 
     def requirements(self):
         self.requires("glad/0.1.36")
@@ -19,6 +19,11 @@ class Animation(ConanFile):
 
     def layout(self):
         cmake_layout(self)
+        self.folders.root = "."
+        self.folders.source = "src"
+        build_type = str(self.settings.build_type)
+        self.folders.build = join("build", format(build_type))
+        self.folders.generators = join(self.folders.build, "conan")
 
     def generate(self):
         tc = CMakeToolchain(self)
