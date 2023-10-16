@@ -22,7 +22,7 @@ target_compile_options(${EXE} PRIVATE "-g")
 endif()
 
 target_link_libraries(${EXE} PRIVATE
-                    OpenGL::OpenGL
+                    OpenGL::GL
                     glad::glad
                     glfw
 )
