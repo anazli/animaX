@@ -1,6 +1,5 @@
 from conan import ConanFile
 from conan.tools.cmake import CMake, CMakeToolchain, cmake_layout
-from conan.tools.files import copy
 from os.path import join
 
 
@@ -28,17 +27,15 @@ class Animation(ConanFile):
     def generate(self):
         tc = CMakeToolchain(self)
         tc.generate()
+        CMake(self).configure()
 
     def build(self):
-        cmake = CMake(self)
-        cmake.configure()
-        cmake.build()
+        CMake(self).build()
 
     def imports(self):
         self.copy("*.so*", src="lib", dst="bin")
         self.copy("*.dll", dst="bin", src="bin")
 
     def package(self):
-        #copy(self, "*", join(self.package_folder, "bin"), join(self.source_folder, "bin"))
         cmake = CMake(self)
         cmake.install()
