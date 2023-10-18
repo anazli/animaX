@@ -1,3 +1,3 @@
 #include "platform/win32_main.h"
 
-//implementation...
+int __stdcall WinMain(HINSTANCE, HINSTANCE, PSTR, int) { return 0; }
