@@ -13,7 +13,6 @@ class Animation(ConanFile):
 
     def requirements(self):
         self.requires("glad/0.1.36")
-        self.requires("glfw/3.3.8")
         self.requires("freeglut/3.4.0")
 
     def layout(self):
