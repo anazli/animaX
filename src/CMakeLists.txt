@@ -31,9 +31,11 @@ set_target_properties(${EXE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${RUN_DIR}
                                         DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
 target_compile_options(${EXE} PRIVATE "-g")
+target_link_options(${EXE} PRIVATE $<$<PLATFORM_ID:Windows>:/SUBSYSTEM:CONSOLE>)
 endif()
 
 target_link_libraries(${EXE} PRIVATE
-                    OpenGL::GL
+                    $<$<PLATFORM_ID:Linux>:OpenGL::GL>
+                    $<$<PLATFORM_ID:Windows>:opengl32.lib>
                     glad::glad
 )
