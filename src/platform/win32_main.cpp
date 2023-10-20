@@ -1,3 +1,6 @@
 #include "platform/win32_main.h"
 
-int __stdcall WinMain(HINSTANCE, HINSTANCE, PSTR, int) { return 0; }
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR lpCmdLine,
+                   int nShowCmd) { 
+	return 0;
+}
