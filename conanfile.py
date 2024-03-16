@@ -3,8 +3,8 @@ from conan.tools.cmake import CMake, CMakeToolchain, cmake_layout
 from os.path import join
 
 
-class Animation(ConanFile):
-    name = "animation"
+class animaX(ConanFile):
+    name = "animaX"
     version = "0.1"
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeDeps"

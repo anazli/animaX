@@ -1,4 +1,5 @@
-# animation
+# AnimaX
+Animation Renderer side project.
 under construction...
 
 Building
