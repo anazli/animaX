@@ -10,9 +10,9 @@ find_package(glad REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
 
-set(SOURCES main.cpp
-            application/application.cpp
+set(SOURCES application/application.cpp
             application/application.h
+            main/animaX.cpp
             window/window.cpp
             window/window.h
 )
