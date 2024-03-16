@@ -8,12 +8,21 @@ class Animation(ConanFile):
     version = "0.1"
     settings = "os", "compiler", "build_type", "arch"
     generators = "CMakeDeps"
-
     exports_sources = "src/*"
 
     def requirements(self):
         self.requires("glad/0.1.36")
-        self.requires("freeglut/3.4.0")
+        self.requires("opengl/system")
+        self.requires("glfw/3.4")
+
+    def configure(self):
+        if self.settings.os == 'Linux':
+            self.options['glad'].shared=False
+            self.options['glad'].fPIC=True
+            self.options['glad'].no_loader=False
+            self.options['glad'].spec='gl'
+            self.options['glad'].gl_profile='compatibility'
+            self.options['glad'].gl_version='3.3'
 
     def layout(self):
         cmake_layout(self)
