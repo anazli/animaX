@@ -14,17 +14,17 @@ set(SOURCES main.cpp
             application/application.cpp
             application/application.h
 )
-if(LINUX)
-set(SOURCES ${SOURCES}
-    	    platform/linux_main.cpp
-    	    platform/linux_main.h
-)
-else()
-set(SOURCES ${SOURCES}
-    	    platform/win32_main.cpp
-    	    platform/win32_main.h
-)
-endif()
+#if(UNIX)
+#set(SOURCES ${SOURCES}
+#    	    platform/linux_main.cpp
+#    	    platform/linux_main.h
+#)
+#else()
+#set(SOURCES ${SOURCES}
+#    	    platform/win32_main.cpp
+#    	    platform/win32_main.h
+#)
+#endif()
 
 add_executable(${EXE} ${SOURCES})
 target_include_directories(${EXE} PRIVATE ${PROJECT_SOURCE_DIR} ${glad_INCLUDE_DIRS})
