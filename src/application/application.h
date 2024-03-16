@@ -1,5 +1,7 @@
 #pragma once
 
+#include "window/window.h"
+
 class Application {
  public:
   Application() = default;
@@ -9,8 +11,8 @@ class Application {
   Application operator=(Application&& other) = delete;
   ~Application() = default;
 
-  //virtual void Initialize();
-  //virtual void Update(float deltaTime);
-  //virtual void Render(float aspectRatio);
-  //virtual void ShutDown();
+  // virtual void Initialize();
+  // virtual void Update(float deltaTime);
+  // virtual void Render(float aspectRatio);
+  // virtual void ShutDown();
 };
