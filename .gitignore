@@ -40,3 +40,9 @@ build
 
 #user defined Cmake presets
 CMakeUserPresets.json
+
+#conan
+conan.lock
+conanbuildinfo.txt
+conaninfo.txt
+graph_info.json
