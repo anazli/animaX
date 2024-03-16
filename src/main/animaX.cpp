@@ -13,4 +13,9 @@
 
 using namespace std;
 
-int main() { return 0; }
+int main() {
+  Application app;
+  app.createWindow(800, 600);
+  app.getWindow()->setTitle("AnimaX");
+  return 0;
+}
