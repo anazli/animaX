@@ -8,14 +8,14 @@
 
 class Window {
  public:
-  Window(GLint width = 500, GLint height = 500);
+  Window(GLint width = 500, GLint height = 500,
+         const std::string &title = std::string());
   ~Window();
 
   GLint bufferWidth() const;
   GLint bufferHeight() const;
   bool shouldClose() const;
   void swapBuffers() const;
-  void setTitle(const std::string &title);
   std::string title() const;
 
  private:

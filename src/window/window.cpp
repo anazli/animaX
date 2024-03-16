@@ -2,7 +2,8 @@
 
 #include <iostream>
 
-Window::Window(GLint width, GLint height) : m_width(width), m_height(height) {
+Window::Window(GLint width, GLint height, const std::string &title)
+    : m_width(width), m_height(height), m_title(title) {
   initialize();
 }
 
@@ -18,8 +19,6 @@ GLint Window::bufferHeight() const { return m_bufferHeight; }
 bool Window::shouldClose() const { return glfwWindowShouldClose(m_window); }
 
 void Window::swapBuffers() const { glfwSwapBuffers(m_window); }
-
-void Window::setTitle(const std::string &title) { m_title = title; }
 
 std::string Window::title() const { return m_title; }
 

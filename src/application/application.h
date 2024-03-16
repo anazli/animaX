@@ -12,8 +12,10 @@ class Application {
   Application(Application&& other) = delete;
   Application operator=(Application&& other) = delete;
 
-  void createWindow(GLint width = 500, GLint height = 500);
+  void createWindow(GLint width = 500, GLint height = 500,
+                    const std::string& title = std::string());
   const std::unique_ptr<Window>& getWindow();
+  void render();
 
  private:
   std::unique_ptr<Window> m_window;
