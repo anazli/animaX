@@ -31,10 +31,6 @@
 *.out
 *.app
 
-#qtcreator
-animation.*
-.qtc_clangd/
-
 #build folder
 build
 
@@ -47,5 +43,12 @@ conanbuildinfo.txt
 conaninfo.txt
 graph_info.json
 
-#Qt project files
-animaX.*
+#qtcreator
+.qtc_clangd/
+animaX.clangs
+animaX.config
+animaX.cflags
+animaX.cxxflags
+animaX.creator
+animaX.files
+animaX.includes
