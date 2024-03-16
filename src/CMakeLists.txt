@@ -13,6 +13,8 @@ find_package(glfw3 REQUIRED)
 set(SOURCES main.cpp
             application/application.cpp
             application/application.h
+            window/window.cpp
+            window/window.h
 )
 #if(UNIX)
 #set(SOURCES ${SOURCES}
@@ -27,7 +29,10 @@ set(SOURCES main.cpp
 #endif()
 
 add_executable(${EXE} ${SOURCES})
-target_include_directories(${EXE} PRIVATE ${PROJECT_SOURCE_DIR} ${glad_INCLUDE_DIRS})
+target_include_directories(${EXE} PRIVATE ${PROJECT_SOURCE_DIR}
+                                          ${glad_INCLUDE_DIRS}
+                                          ${glfw_INCLUDE_DIRS}
+)
 set_target_properties(${EXE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${RUN_DIR}
                                         DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
