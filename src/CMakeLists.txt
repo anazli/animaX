@@ -8,6 +8,7 @@ set(CMAKE_DEBUG_POSTFIX d)
 
 find_package(glad REQUIRED)
 find_package(OpenGL REQUIRED)
+find_package(glfw3 REQUIRED)
 
 set(SOURCES main.cpp
             application/application.cpp
@@ -38,4 +39,5 @@ target_link_libraries(${EXE} PRIVATE
                     $<$<PLATFORM_ID:Linux>:OpenGL::GL>
                     $<$<PLATFORM_ID:Windows>:opengl32.lib>
                     glad::glad
+		    glfw
 )
