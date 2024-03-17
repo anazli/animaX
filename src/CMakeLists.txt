@@ -13,6 +13,8 @@ find_package(glfw3 REQUIRED)
 set(SOURCES application/application.cpp
             application/application.h
             main/animaX.cpp
+            mesh/mesh.cpp
+            mesh/mesh.h
             window/window.cpp
             window/window.h
 )

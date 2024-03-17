@@ -1,5 +1,7 @@
 #pragma once
 
+#include <KHR/khrplatform.h>
+
 #include <memory>
 
 #include "window/window.h"
