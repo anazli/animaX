@@ -15,6 +15,8 @@ set(SOURCES application/application.cpp
             main/animaX.cpp
             mesh/mesh.cpp
             mesh/mesh.h
+            shader/shader.cpp
+            shader/shader.h
             window/window.cpp
             window/window.h
 )
