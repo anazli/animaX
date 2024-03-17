@@ -3,7 +3,10 @@
 #include <KHR/khrplatform.h>
 
 #include <memory>
+#include <vector>
 
+#include "mesh/mesh.h"
+#include "shader/shader.h"
 #include "window/window.h"
 
 class Application {
@@ -17,7 +20,8 @@ class Application {
   void createWindow(GLint width = 500, GLint height = 500,
                     const std::string& title = std::string());
   const std::unique_ptr<Window>& getWindow();
-  void render();
+  void render(std::vector<MeshPtr>& meshContainer,
+              std::vector<ShaderPtr> shaderContainer);
 
  private:
   std::unique_ptr<Window> m_window;

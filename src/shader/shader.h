@@ -2,6 +2,7 @@
 
 #include <glad/glad.h>
 
+#include <memory>
 #include <string>
 
 class Shader {
@@ -26,3 +27,5 @@ class Shader {
 
   GLuint m_shaderID, m_uniformProj, m_uniformModel;
 };
+
+using ShaderPtr = std::shared_ptr<Shader>;

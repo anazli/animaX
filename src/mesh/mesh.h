@@ -2,6 +2,8 @@
 
 #include <glad/glad.h>
 
+#include <memory>
+
 class Mesh {
  public:
   ~Mesh();
@@ -14,3 +16,5 @@ class Mesh {
   GLuint m_vao = 0, m_vbo = 0, m_ibo = 0;
   GLsizei m_indexCount = 0;
 };
+
+using MeshPtr = std::shared_ptr<Mesh>;

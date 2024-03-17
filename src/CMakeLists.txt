@@ -9,6 +9,7 @@ set(CMAKE_DEBUG_POSTFIX d)
 find_package(glad REQUIRED)
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
+find_package(glm REQUIRED)
 
 set(SOURCES application/application.cpp
             application/application.h
@@ -36,6 +37,7 @@ add_executable(${EXE} ${SOURCES})
 target_include_directories(${EXE} PRIVATE ${PROJECT_SOURCE_DIR}
                                           ${glad_INCLUDE_DIRS}
                                           ${glfw_INCLUDE_DIRS}
+                                          ${glm_INCLUDE_DIRS}
 )
 set_target_properties(${EXE} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${RUN_DIR}
                                         DEBUG_POSTFIX ${CMAKE_DEBUG_POSTFIX})
@@ -48,5 +50,6 @@ target_link_libraries(${EXE} PRIVATE
                     $<$<PLATFORM_ID:Linux>:OpenGL::GL>
                     $<$<PLATFORM_ID:Windows>:opengl32.lib>
                     glad::glad
-		    glfw
+                    glm::glm
+                    glfw
 )

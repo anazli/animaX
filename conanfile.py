@@ -14,6 +14,7 @@ class animaX(ConanFile):
         self.requires("glad/0.1.36")
         self.requires("opengl/system")
         self.requires("glfw/3.4")
+        self.requires("glm/cci.20230113")
 
     def configure(self):
         if self.settings.os == 'Linux':
